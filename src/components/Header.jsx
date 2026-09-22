@@ -22,11 +22,21 @@ function Header() {
   return (
     <header className="site-header">
       <div className="container header-inner">
-        <Link to="/" className="site-logo" onClick={closeMenu}>
-          <span>CAR</span>
-          <span>MANUFACTURING</span>
+
+        {/* Brand */}
+        <Link to="/" className="header-brand" onClick={closeMenu}>
+          <img
+            src="/assets/logo/logo.png"
+            alt="Car Manufacturing logo"
+            className="header-logo"
+          />
+
+          <span className="header-brand-name">
+            CAR MANUFACTURING
+          </span>
         </Link>
 
+        {/* Navigation */}
         <nav className={`main-nav ${menuOpen ? "nav-open" : ""}`}>
           {navItems.map((item) => (
             <NavLink
@@ -42,6 +52,7 @@ function Header() {
           ))}
         </nav>
 
+        {/* Mobile menu */}
         <button
           className="menu-toggle"
           type="button"
@@ -50,6 +61,7 @@ function Header() {
         >
           {menuOpen ? <X size={24} /> : <Menu size={24} />}
         </button>
+
       </div>
     </header>
   );
