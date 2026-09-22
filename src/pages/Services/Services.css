@@ -1,0 +1,552 @@
+.services-page {
+  width: 100%;
+}
+
+/* =========================
+   HERO
+========================= */
+
+.services-hero {
+  min-height: 58vh;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  text-align: center;
+
+  background-image:
+    linear-gradient(
+      rgba(0, 0, 0, 0.42),
+      rgba(0, 0, 0, 0.52)
+    ),
+    url("https://images.unsplash.com/photo-1493238792000-8113da705763?auto=format&fit=crop&w=1800&q=85");
+
+  background-size: cover;
+  background-position: center;
+
+  position: relative;
+}
+
+.services-hero::after {
+  content: "";
+
+  position: absolute;
+  inset: 0;
+
+  background:
+    linear-gradient(
+      to bottom,
+      transparent 55%,
+      rgba(0, 0, 0, 0.45)
+    );
+
+  pointer-events: none;
+}
+
+.services-hero-content {
+  position: relative;
+  z-index: 1;
+
+  max-width: 850px;
+  padding: 40px 20px;
+
+  color: #fff;
+
+  animation: servicesHeroFade 0.8s ease forwards;
+}
+
+.services-label,
+.section-label {
+  margin-bottom: 15px;
+
+  color: #c8ff00;
+
+  font-size: 0.78rem;
+  font-weight: 700;
+
+  letter-spacing: 3px;
+}
+
+.services-hero h1 {
+  margin: 0 0 20px;
+
+  font-size: clamp(3rem, 7vw, 5.5rem);
+  line-height: 1;
+
+  letter-spacing: -2px;
+}
+
+.services-hero p:last-child {
+  max-width: 680px;
+  margin: 0 auto;
+
+  font-size: 1.05rem;
+  line-height: 1.8;
+
+  color: rgba(255, 255, 255, 0.9);
+}
+
+/* =========================
+   SERVICES SECTION
+========================= */
+
+.services-section {
+  padding: 110px 20px;
+}
+
+.services-container {
+  width: min(1200px, 100%);
+  margin: 0 auto;
+}
+
+.services-heading {
+  max-width: 760px;
+  margin-bottom: 60px;
+}
+
+.services-heading h2,
+.strengths-heading h2 {
+  margin: 0 0 20px;
+
+  font-size: clamp(2rem, 5vw, 3.4rem);
+  line-height: 1.15;
+
+  letter-spacing: -1px;
+}
+
+.services-heading > p:last-child,
+.strengths-heading > p:last-child {
+  max-width: 650px;
+
+  line-height: 1.8;
+
+  opacity: 0.7;
+}
+
+/* =========================
+   SERVICES GRID
+========================= */
+
+.services-grid {
+  display: grid;
+
+  grid-template-columns: repeat(3, 1fr);
+
+  gap: 24px;
+}
+
+/* =========================
+   SERVICE CARD
+========================= */
+
+.service-card {
+  position: relative;
+
+  min-height: 340px;
+
+  padding: 32px;
+
+  border-radius: 20px;
+
+  border: 1px solid rgba(34, 197, 94, 0.15);
+
+  background:
+    linear-gradient(
+      145deg,
+      rgba(34, 197, 94, 0.07),
+      rgba(34, 197, 94, 0.015) 45%,
+      rgba(0, 0, 0, 0.02)
+    );
+
+  overflow: hidden;
+
+  transition:
+    transform 0.4s ease,
+    box-shadow 0.4s ease,
+    border-color 0.4s ease;
+}
+
+/* Large decorative green circle */
+
+.service-card::before {
+  content: "";
+
+  position: absolute;
+
+  width: 190px;
+  height: 190px;
+
+  top: -100px;
+  right: -90px;
+
+  border-radius: 50%;
+
+  background: rgba(34, 197, 94, 0.08);
+
+  transition:
+    transform 0.5s ease,
+    background 0.5s ease;
+}
+
+/* Bottom green line */
+
+.service-card::after {
+  content: "";
+
+  position: absolute;
+
+  left: 0;
+  bottom: 0;
+
+  width: 0;
+  height: 4px;
+
+  background: #c8ff00;
+
+  box-shadow: 0 0 15px rgba(200, 255, 0, 0.7);
+
+  transition: width 0.45s ease;
+}
+
+.service-card:hover {
+  transform: translateY(-10px);
+
+  border-color: rgba(34, 197, 94, 0.55);
+
+  box-shadow:
+    0 20px 50px rgba(0, 0, 0, 0.12),
+    0 0 25px rgba(34, 197, 94, 0.08);
+}
+
+.service-card:hover::before {
+  transform: scale(1.5);
+
+  background: rgba(34, 197, 94, 0.13);
+}
+
+.service-card:hover::after {
+  width: 100%;
+}
+
+/* =========================
+   NUMBER BADGE
+========================= */
+
+.service-number {
+  position: relative;
+  z-index: 1;
+
+  display: inline-flex;
+
+  align-items: center;
+  justify-content: center;
+
+  width: 52px;
+  height: 52px;
+
+  margin-bottom: 55px;
+
+  border-radius: 50%;
+
+  border: 1px solid rgba(34, 197, 94, 0.45);
+
+  background:
+    linear-gradient(
+      145deg,
+      rgba(34, 197, 94, 0.2),
+      rgba(34, 197, 94, 0.04)
+    );
+
+  color: #c8ff00;
+
+  font-size: 0.75rem;
+  font-weight: 800;
+
+  letter-spacing: 1px;
+
+  box-shadow:
+    0 0 20px rgba(34, 197, 94, 0.08);
+
+  transition:
+    transform 0.4s ease,
+    box-shadow 0.4s ease;
+}
+
+.service-card:hover .service-number {
+  transform: rotate(8deg) scale(1.1);
+
+  box-shadow:
+    0 0 25px rgba(34, 197, 94, 0.25);
+}
+
+/* =========================
+   CARD CONTENT
+========================= */
+
+.service-card-content {
+  position: relative;
+  z-index: 1;
+}
+
+.service-card h3 {
+  margin: 0 0 15px;
+
+  font-size: 1.35rem;
+
+  line-height: 1.3;
+
+  transition: color 0.3s ease;
+}
+
+.service-card:hover h3 {
+  color: #c8ff00;
+}
+
+.service-card p {
+  margin: 0;
+
+  max-width: 340px;
+
+  font-size: 0.95rem;
+
+  line-height: 1.75;
+
+  opacity: 0.68;
+}
+
+/* Arrow */
+
+.service-arrow {
+  display: inline-flex;
+
+  align-items: center;
+  justify-content: center;
+
+  width: 38px;
+  height: 38px;
+
+  margin-top: 25px;
+
+  border-radius: 50%;
+
+  border: 1px solid rgba(34, 197, 94, 0.25);
+
+  color: #c8ff00;
+
+  font-size: 1.2rem;
+
+  transition:
+    transform 0.35s ease,
+    background 0.35s ease,
+    color 0.35s ease;
+}
+
+.service-card:hover .service-arrow {
+  transform: translate(5px, -5px);
+
+  background: #c8ff00;
+
+  color: #fff;
+}
+
+/* =========================
+   STRENGTHS SECTION
+========================= */
+
+.strengths-section {
+  padding: 110px 20px;
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(34, 197, 94, 0.06),
+      transparent 40%
+    );
+}
+
+.strengths-container {
+  width: min(1200px, 100%);
+  margin: 0 auto;
+}
+
+.strengths-heading {
+  max-width: 720px;
+  margin-bottom: 60px;
+}
+
+.strengths-grid {
+  display: grid;
+
+  grid-template-columns: repeat(4, 1fr);
+
+  gap: 20px;
+}
+
+.strength-card {
+  position: relative;
+
+  padding: 32px;
+
+  min-height: 230px;
+
+  border-radius: 18px;
+
+  border: 1px solid rgba(34, 197, 94, 0.14);
+
+  background:
+    linear-gradient(
+      145deg,
+      rgba(34, 197, 94, 0.06),
+      transparent
+    );
+
+  overflow: hidden;
+
+  transition:
+    transform 0.35s ease,
+    border-color 0.35s ease,
+    box-shadow 0.35s ease;
+}
+
+.strength-card::before {
+  content: "";
+
+  position: absolute;
+
+  top: 0;
+  left: 0;
+
+  width: 0;
+  height: 3px;
+
+  background: #c8ff00;
+
+  transition: width 0.4s ease;
+}
+
+.strength-card:hover {
+  transform: translateY(-7px);
+
+  border-color: rgba(34, 197, 94, 0.4);
+
+  box-shadow:
+    0 15px 35px rgba(0, 0, 0, 0.08),
+    0 0 20px rgba(34, 197, 94, 0.06);
+}
+
+.strength-card:hover::before {
+  width: 100%;
+}
+
+.strength-card > span {
+  display: block;
+
+  margin-bottom: 35px;
+
+  color: #c8ff00;
+
+  font-size: 0.75rem;
+  font-weight: 800;
+
+  letter-spacing: 2px;
+
+  opacity: 0.8;
+}
+
+.strength-card h3 {
+  margin: 0 0 15px;
+
+  font-size: 1.25rem;
+
+  transition: color 0.3s ease;
+}
+
+.strength-card:hover h3 {
+  color: #c8ff00;
+}
+
+.strength-card p {
+  margin: 0;
+
+  font-size: 0.92rem;
+
+  line-height: 1.7;
+
+  opacity: 0.65;
+}
+
+/* =========================
+   ANIMATION
+========================= */
+
+@keyframes servicesHeroFade {
+  from {
+    opacity: 0;
+    transform: translateY(25px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 992px) {
+  .services-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .strengths-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .services-hero {
+    min-height: 48vh;
+  }
+
+  .services-section,
+  .strengths-section {
+    padding: 75px 16px;
+  }
+
+  .services-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .strengths-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .service-card {
+    min-height: 300px;
+  }
+}
+
+@media (max-width: 480px) {
+  .services-hero-content {
+    padding: 30px 16px;
+  }
+
+  .services-hero h1 {
+    letter-spacing: -1px;
+  }
+
+  .service-card {
+    padding: 26px;
+  }
+
+  .service-number {
+    margin-bottom: 40px;
+  }
+
+  .strength-card {
+    min-height: auto;
+  }
+}

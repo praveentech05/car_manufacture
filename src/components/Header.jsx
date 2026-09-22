@@ -1,6 +1,7 @@
 import { Link, NavLink } from "react-router-dom";
 import { Menu, X } from "lucide-react";
 import { useState } from "react";
+import logo from "../assets/logo/car.png";
 
 import "../styles/header.css";
 
@@ -26,8 +27,7 @@ function Header() {
         {/* Brand */}
         <Link to="/" className="header-brand" onClick={closeMenu}>
           <img
-            src="/assets/logo/logo.png"
-            alt="Car Manufacturing logo"
+            src={logo} alt="Company Logo"
             className="header-logo"
           />
 
