@@ -1,0 +1,177 @@
+/* About page */
+.about-page {
+    overflow: hidden;
+    background: var(--color-bg);
+}
+
+.about-banner {
+    min-height: 520px;
+    display: flex;
+    align-items: flex-end;
+    padding: 150px 0 85px;
+    background:
+        linear-gradient(90deg, rgba(8, 8, 8, 0.92), rgba(8, 8, 8, 0.4)),
+        url("https://images.unsplash.com/photo-1560958089-b8a1929cea89?auto=format&fit=crop&w=2000&q=85") center/cover no-repeat;
+}
+
+.about-banner h1 {
+    max-width: 950px;
+    font-family: var(--font-heading);
+    font-size: clamp(3rem, 7vw, 6.5rem);
+    line-height: 0.92;
+    letter-spacing: -0.06em;
+}
+
+.about-banner>.container>p:last-child {
+    max-width: 650px;
+    margin-top: 25px;
+    color: var(--color-text-secondary);
+    font-size: 1.05rem;
+}
+
+.about-story {
+    border-bottom: 1px solid var(--color-border);
+}
+
+.about-story-grid,
+.about-mission-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: start;
+}
+
+.about-story h2,
+.about-mission h2,
+.about-cta h2 {
+    max-width: 650px;
+    font-family: var(--font-heading);
+    font-size: clamp(2.2rem, 5vw, 4.5rem);
+    line-height: 1;
+    letter-spacing: -0.05em;
+}
+
+.about-story-copy {
+    color: var(--color-text-secondary);
+    font-size: 1.05rem;
+}
+
+.about-story-copy p+p {
+    margin-top: 22px;
+}
+
+.about-image-section {
+    padding: 110px 0;
+}
+
+.about-main-image {
+    min-height: 600px;
+    border-radius: var(--radius-lg);
+    border: 1px solid var(--color-border);
+    background:
+        linear-gradient(180deg, transparent 45%, rgba(8, 8, 8, 0.75)),
+        url("https://images.unsplash.com/photo-1583121274602-3e2820c69888?auto=format&fit=crop&w=1800&q=85") center/cover no-repeat;
+}
+
+.about-values {
+    background: var(--color-bg-secondary);
+}
+
+.about-values-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.about-value-card {
+    padding: 32px;
+    min-height: 280px;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-lg);
+    background: var(--color-surface);
+}
+
+.about-value-icon {
+    width: 50px;
+    height: 50px;
+    display: grid;
+    place-items: center;
+    margin-bottom: 55px;
+    border-radius: 50%;
+    color: #080808;
+    background: var(--color-primary);
+}
+
+.about-value-card h3 {
+    font-family: var(--font-heading);
+    font-size: 1.45rem;
+    margin-bottom: 10px;
+}
+
+.about-value-card p,
+.about-mission-grid>div:last-child>p {
+    color: var(--color-text-secondary);
+}
+
+.about-mission {
+    padding: 110px 0;
+    border-bottom: 1px solid var(--color-border);
+}
+
+.about-mission-grid>div:last-child {
+    padding-top: 10px;
+    font-size: 1.05rem;
+}
+
+.about-cta {
+    text-align: center;
+    background:
+        linear-gradient(90deg, rgba(8, 8, 8, 0.82), rgba(8, 8, 8, 0.55)),
+        url("https://images.unsplash.com/photo-1493238792000-8113da705763?auto=format&fit=crop&w=1800&q=85") center/cover no-repeat;
+}
+
+.about-cta h2 {
+    margin: 0 auto 30px;
+}
+
+.about-cta-actions {
+    display: flex;
+    justify-content: center;
+    gap: 14px;
+    flex-wrap: wrap;
+}
+
+@media (max-width: 768px) {
+    .about-banner {
+        min-height: 470px;
+        padding: 130px 0 65px;
+        background-position: 65% center;
+    }
+
+    .about-story-grid,
+    .about-mission-grid {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+
+    .about-image-section,
+    .about-mission {
+        padding: 75px 0;
+    }
+
+    .about-main-image {
+        min-height: 380px;
+    }
+
+    .about-values-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .about-value-card {
+        min-height: auto;
+    }
+
+    .about-value-icon {
+        margin-bottom: 35px;
+    }
+}
