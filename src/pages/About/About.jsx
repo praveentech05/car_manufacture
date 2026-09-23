@@ -121,33 +121,3 @@ function About() {
 
 export default About;
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// function About() {
-//   return (
-//     <section className="page">
-//       <div className="container">
-//         <h1>About Us</h1>
-//       </div>
-//     </section>
-//   );
-// }
-
-// export default About;
