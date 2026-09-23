@@ -1,5 +1,6 @@
 .contact-page {
   width: 100%;
+  overflow-x: hidden;
 }
 
 /* =========================
@@ -8,6 +9,7 @@
 
 .contact-hero {
   min-height: 55vh;
+  padding-top: 80px;
 
   display: flex;
   align-items: center;
@@ -20,7 +22,7 @@
       rgba(0, 0, 0, 0.42),
       rgba(0, 0, 0, 0.52)
     ),
-    url("https://images.unsplash.com/photo-1502877338535-766e1452684a?auto=format&fit=crop&w=1800&q=85");
+    url("https://images.unsplash.com/photo-1617814076367-b759c7d7e738?auto=format&fit=crop&w=1800&q=85");
 
   background-size: cover;
   background-position: center;
@@ -78,7 +80,7 @@
 ========================= */
 
 .contact-section {
-  padding: 110px 20px;
+  padding: 60px 20px;
 }
 
 .contact-container {
@@ -90,7 +92,7 @@
 
   grid-template-columns: 0.9fr 1.1fr;
 
-  gap: 80px;
+  gap: 50px;
 
   align-items: start;
 }
@@ -102,7 +104,7 @@
 .contact-heading {
   max-width: 550px;
 
-  margin-bottom: 55px;
+  margin-bottom: 35px;
 }
 
 .contact-heading h2 {
@@ -376,7 +378,7 @@
 ========================= */
 
 .location-section {
-  padding: 100px 20px;
+  padding: 60px 20px;
 
   background:
     linear-gradient(
@@ -542,31 +544,41 @@
    RESPONSIVE
 ========================= */
 
-@media (max-width: 992px) {
+/* =========================
+   RESPONSIVE
+========================= */
+
+/* Tablet: 768px – 1023px */
+@media (max-width: 1023px) {
+  .contact-hero {
+    min-height: 50vh;
+  }
+
   .contact-container {
     grid-template-columns: 1fr;
-
-    gap: 60px;
+    gap: 40px;
   }
 
   .location-container {
     grid-template-columns: 1fr;
+    gap: 30px;
   }
 }
 
-@media (max-width: 768px) {
+/* Large mobile / small tablet: 481px – 767px */
+@media (max-width: 767px) {
   .contact-hero {
-    min-height: 48vh;
+    min-height: 46vh;
+    padding-top: 0;
   }
 
   .contact-section,
   .location-section {
-    padding: 75px 16px;
+    padding: 40px 16px;
   }
 
   .form-row {
     grid-template-columns: 1fr;
-
     gap: 0;
   }
 
@@ -575,13 +587,18 @@
   }
 
   .location-map {
-    min-height: 300px;
+    min-height: 280px;
   }
 }
 
+/* Standard mobile: 375px – 480px */
 @media (max-width: 480px) {
+  .contact-hero {
+    padding-top: 0;
+  }
+
   .contact-hero-content {
-    padding: 30px 16px;
+    padding: 28px 16px;
   }
 
   .contact-hero h1 {
@@ -589,7 +606,7 @@
   }
 
   .contact-form-wrapper {
-    padding: 24px 18px;
+    padding: 22px 16px;
   }
 
   .contact-detail {
@@ -602,6 +619,53 @@
   }
 
   .location-map {
-    min-height: 260px;
+    min-height: 250px;
+  }
+}
+
+/* Small mobile: 320px – 374px */
+@media (max-width: 374px) {
+  .contact-hero h1 {
+    font-size: 2.2rem;
+    letter-spacing: -0.5px;
+  }
+
+  .contact-hero p:last-child {
+    font-size: 0.88rem;
+  }
+
+  .contact-form-wrapper {
+    padding: 18px 14px;
+  }
+
+  .contact-submit {
+    font-size: 0.9rem;
+    padding: 13px 14px;
+  }
+
+  .location-map {
+    min-height: 220px;
+  }
+}
+
+/* =========================
+   REDUCED MOTION
+========================= */
+
+@media (prefers-reduced-motion: reduce) {
+  .contact-submit {
+    transition: none;
+  }
+
+  .submit-arrow {
+    transition: none;
+  }
+
+  .location-map::before {
+    animation: none;
+  }
+
+  .contact-detail-number {
+    transition: none;
   }
 }
