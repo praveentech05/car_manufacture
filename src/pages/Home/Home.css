@@ -5,11 +5,14 @@
 }
 
 .home-hero {
-    min-height: calc(100vh - var(--header-height));
+    min-height: 100vh;
+    min-height: 100svh;
+    width: 100%;
     position: relative;
     display: flex;
     align-items: center;
     isolation: isolate;
+    padding-top: var(--header-height);
     background:
         linear-gradient(90deg, rgba(8, 8, 8, 0.96) 0%, rgba(8, 8, 8, 0.72) 42%, rgba(8, 8, 8, 0.18) 100%),
         url("https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=2000&q=85") center/cover no-repeat;
@@ -23,25 +26,56 @@
 }
 
 .home-hero-content {
-    padding-top: 80px;
-    padding-bottom: 100px;
+    width: 100%;
+    padding-top: 40px;
+    padding-bottom: 60px;
 }
 
-.home-eyebrow,
-.section-kicker {
+.home-eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
     color: var(--color-primary);
     font-size: 0.75rem;
     font-weight: 700;
-    letter-spacing: 0.2em;
-    margin-bottom: 18px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    padding: 6px 14px;
+    background: rgba(200, 255, 0, 0.08);
+    border: 1px solid rgba(200, 255, 0, 0.28);
+    border-radius: 999px;
+    backdrop-filter: blur(8px);
+    margin-top: 10px;
+    margin-bottom: 16px;
+}
+
+.home-eyebrow::before {
+    content: "";
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--color-primary);
+    box-shadow: 0 0 8px var(--color-primary);
+}
+
+.section-kicker {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    color: var(--color-primary);
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    margin-bottom: 10px;
 }
 
 .home-hero h1 {
     max-width: 850px;
     font-family: var(--font-heading);
-    font-size: clamp(3.5rem, 8vw, 7.5rem);
-    line-height: 0.9;
-    letter-spacing: -0.06em;
+    font-size: clamp(3.2rem, 7.5vw, 7rem);
+    line-height: 0.92;
+    letter-spacing: -0.05em;
 }
 
 .home-hero h1 span {
@@ -51,7 +85,7 @@
 
 .home-hero-text {
     max-width: 620px;
-    margin-top: 28px;
+    margin-top: 18px;
     color: var(--color-text-secondary);
     font-size: 1.05rem;
 }
@@ -60,7 +94,7 @@
     display: flex;
     gap: 14px;
     flex-wrap: wrap;
-    margin-top: 36px;
+    margin-top: 24px;
 }
 
 .home-button {
@@ -68,8 +102,8 @@
     align-items: center;
     justify-content: center;
     gap: 10px;
-    min-height: 50px;
-    padding: 0 22px;
+    min-height: 48px;
+    padding: 0 20px;
     border: 1px solid var(--color-border);
     border-radius: 999px;
     font-weight: 600;
@@ -102,7 +136,7 @@
 .home-scroll-indicator {
     position: absolute;
     right: 5%;
-    bottom: 35px;
+    bottom: 25px;
     color: var(--color-text-secondary);
     font-size: 0.65rem;
     letter-spacing: 0.18em;
@@ -110,7 +144,7 @@
 }
 
 .section-space {
-    padding: 110px 0;
+    padding: 38px 0;
 }
 
 .home-intro {
@@ -121,7 +155,7 @@
 .showcase-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 80px;
+    gap: 38px;
     align-items: center;
 }
 
@@ -130,9 +164,9 @@
 .showcase-content h2,
 .home-cta h2 {
     font-family: var(--font-heading);
-    font-size: clamp(2.2rem, 5vw, 4.5rem);
-    line-height: 1;
-    letter-spacing: -0.05em;
+    font-size: clamp(2rem, 4.5vw, 4rem);
+    line-height: 1.05;
+    letter-spacing: -0.04em;
 }
 
 .home-intro-copy {
@@ -145,7 +179,7 @@
     display: inline-flex;
     align-items: center;
     gap: 8px;
-    margin-top: 28px;
+    margin-top: 14px;
     color: var(--color-primary);
     font-weight: 600;
 }
@@ -160,38 +194,37 @@
 
 .section-heading {
     max-width: 650px;
-    margin-bottom: 55px;
+    margin-bottom: 22px;
 }
 
 .feature-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 20px;
+    gap: 16px;
 }
 
 .feature-card {
-    min-height: 280px;
-    padding: 32px;
+    padding: 22px 20px;
     background: var(--color-surface);
     border: 1px solid var(--color-border);
     border-radius: var(--radius-lg);
 }
 
 .feature-icon {
-    width: 50px;
-    height: 50px;
+    width: 44px;
+    height: 44px;
     display: grid;
     place-items: center;
     color: #080808;
     background: var(--color-primary);
     border-radius: 50%;
-    margin-bottom: 60px;
+    margin-bottom: 16px;
 }
 
 .feature-card h3 {
     font-family: var(--font-heading);
-    font-size: 1.5rem;
-    margin-bottom: 10px;
+    font-size: 1.3rem;
+    margin-bottom: 6px;
 }
 
 .feature-card p,
@@ -200,11 +233,12 @@
 }
 
 .home-showcase {
-    padding: 110px 0;
+    padding: 38px 0;
 }
 
 .showcase-image {
-    min-height: 560px;
+    min-height: 360px;
+    height: 100%;
     border-radius: var(--radius-lg);
     background:
         linear-gradient(180deg, transparent 40%, rgba(8, 8, 8, 0.65)),
@@ -217,7 +251,7 @@
 }
 
 .showcase-content>p:not(.section-kicker) {
-    margin-top: 25px;
+    margin-top: 14px;
     font-size: 1.05rem;
 }
 
@@ -232,22 +266,81 @@
 }
 
 .home-cta h2 {
-    margin-bottom: 32px;
+    margin-bottom: 18px;
 }
 
+/* Tablet Screens (769px to 1024px) */
+@media (min-width: 769px) and (max-width: 1024px) {
+    .home-hero {
+        min-height: 85vh;
+        background-position: 70% center;
+    }
+
+    .home-intro-grid,
+    .showcase-grid {
+        gap: 28px;
+    }
+
+    .feature-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 12px;
+    }
+
+    .feature-card {
+        padding: 18px 16px;
+    }
+}
+
+/* Mobile Screens (<= 768px: iPhone 16/15/14, Galaxy, Pixel, etc.) */
 @media (max-width: 768px) {
     .home-hero {
-        min-height: calc(100vh - var(--header-height));
-        background-position: 60% center;
+        min-height: 100vh;
+        min-height: 100dvh;
+        background:
+            linear-gradient(180deg, rgba(8, 8, 8, 0.88) 0%, rgba(8, 8, 8, 0.55) 45%, rgba(8, 8, 8, 0.95) 100%),
+            url("https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=1200&q=80") 68% center / cover no-repeat;
+        display: flex;
+        align-items: center;
+        padding-top: var(--header-height);
+        padding-bottom: 24px;
     }
 
     .home-hero-content {
-        padding-top: 50px;
-        padding-bottom: 80px;
+        padding-top: 16px;
+        padding-bottom: 20px;
+    }
+
+    .home-eyebrow {
+        font-size: 0.7rem;
+        padding: 5px 12px;
+        margin-top: 4px;
+        margin-bottom: 12px;
     }
 
     .home-hero h1 {
-        font-size: clamp(3rem, 15vw, 5rem);
+        font-size: clamp(2.1rem, 9.5vw, 3.2rem);
+        line-height: 1.02;
+    }
+
+    .home-hero-text {
+        font-size: 0.95rem;
+        margin-top: 14px;
+        line-height: 1.5;
+    }
+
+    .home-hero-actions {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        width: 100%;
+        max-width: 300px;
+        margin-top: 20px;
+    }
+
+    .home-button {
+        width: 100%;
+        min-height: 48px;
+        font-size: 0.92rem;
     }
 
     .home-scroll-indicator {
@@ -256,28 +349,59 @@
 
     .section-space,
     .home-showcase {
-        padding: 75px 0;
+        padding: 34px 0;
     }
 
     .home-intro-grid,
     .showcase-grid {
         grid-template-columns: 1fr;
-        gap: 40px;
+        gap: 20px;
+    }
+
+    .home-intro h2,
+    .section-heading h2,
+    .showcase-content h2,
+    .home-cta h2 {
+        font-size: clamp(1.7rem, 6.5vw, 2.3rem);
+        line-height: 1.1;
     }
 
     .feature-grid {
         grid-template-columns: 1fr;
+        gap: 14px;
     }
 
     .feature-card {
         min-height: auto;
+        padding: 20px 18px;
     }
 
     .feature-icon {
-        margin-bottom: 35px;
+        margin-bottom: 14px;
     }
 
     .showcase-image {
-        min-height: 380px;
+        min-height: 220px;
+        height: 220px;
+    }
+
+    .home-cta {
+        padding: 40px 0;
+    }
+}
+
+/* Extra-small screens (<= 360px, iPhone SE) */
+@media (max-width: 360px) {
+    .home-hero h1 {
+        font-size: clamp(1.85rem, 8.5vw, 2.2rem);
+    }
+
+    .home-hero-actions {
+        max-width: 100%;
+    }
+
+    .home-button {
+        font-size: 0.88rem;
+        min-height: 44px;
     }
 }
