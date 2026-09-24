@@ -541,46 +541,27 @@
 /* Large mobile / small tablet: 481px – 767px */
 @media (max-width: 767px) {
   .services-hero {
-<<<<<<< HEAD
     min-height: 44vh;
     padding-top: var(--header-height);
   }
 
   .services-hero h1 {
     font-size: clamp(2rem, 8vw, 3rem);
-=======
-    min-height: 45vh;
-    padding-top: 0;
->>>>>>> master
   }
 
   .services-section,
   .strengths-section {
-<<<<<<< HEAD
     padding: 36px 0;
-=======
-    padding: 40px 16px;
-  }
-
-  .services-grid {
-    grid-template-columns: 1fr;
-    gap: 16px;
->>>>>>> master
   }
 
   .services-grid,
   .strengths-grid {
     grid-template-columns: 1fr;
-<<<<<<< HEAD
     gap: 14px;
-=======
-    gap: 16px;
->>>>>>> master
   }
 
   .service-card {
     min-height: auto;
-<<<<<<< HEAD
     padding: 22px 18px;
   }
 
@@ -591,12 +572,6 @@
   .strength-card {
     min-height: auto;
     padding: 20px 18px;
-=======
-  }
-
-  .service-card:hover {
-    transform: translateY(-4px);
->>>>>>> master
   }
 }
 
@@ -607,11 +582,7 @@
   }
 
   .services-hero-content {
-<<<<<<< HEAD
     padding: 24px 14px;
-=======
-    padding: 28px 16px;
->>>>>>> master
   }
 
   .services-heading,
@@ -619,49 +590,9 @@
     margin-bottom: 24px;
   }
 
-<<<<<<< HEAD
   .services-heading h2,
   .strengths-heading h2 {
     font-size: clamp(1.6rem, 6.5vw, 2.2rem);
     line-height: 1.15;
-=======
-  .service-card {
-    padding: 22px 18px;
-  }
-
-  .service-number {
-    margin-bottom: 24px;
-  }
-
-  .strength-card {
-    min-height: auto;
-    padding: 22px 18px;
-  }
-}
-
-/* Small mobile: 320px – 374px */
-@media (max-width: 374px) {
-  .services-hero h1 {
-    font-size: 2.2rem;
-    letter-spacing: -0.5px;
-  }
-
-  .services-hero p:last-child {
-    font-size: 0.88rem;
-  }
-
-  .service-card {
-    padding: 18px 14px;
-  }
-
-  .service-number {
-    margin-bottom: 18px;
-    width: 44px;
-    height: 44px;
-  }
-
-  .strength-card {
-    padding: 18px 14px;
->>>>>>> master
   }
 }

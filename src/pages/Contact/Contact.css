@@ -566,30 +566,21 @@
 /* Large mobile / small tablet: 481px – 767px */
 @media (max-width: 767px) {
   .contact-hero {
-<<<<<<< HEAD
     min-height: 44vh;
     padding-top: var(--header-height);
   }
 
   .contact-hero h1 {
     font-size: clamp(2rem, 8vw, 3rem);
-=======
-    min-height: 46vh;
-    padding-top: 0;
->>>>>>> master
   }
 
   .contact-section,
   .location-section {
-<<<<<<< HEAD
     padding: 36px 0;
   }
 
   .contact-container {
     gap: 36px;
-=======
-    padding: 40px 16px;
->>>>>>> master
   }
 
   .form-row {
@@ -607,12 +598,8 @@
   }
 
   .location-map {
-<<<<<<< HEAD
     min-height: 250px;
     border-radius: var(--radius-md);
-=======
-    min-height: 280px;
->>>>>>> master
   }
 }
 
@@ -623,23 +610,11 @@
   }
 
   .contact-hero-content {
-<<<<<<< HEAD
     padding: 24px 14px;
   }
 
   .contact-form-wrapper {
     padding: 20px 16px;
-=======
-    padding: 28px 16px;
-  }
-
-  .contact-hero h1 {
-    letter-spacing: -1px;
-  }
-
-  .contact-form-wrapper {
-    padding: 22px 16px;
->>>>>>> master
   }
 
   .contact-detail {
@@ -659,57 +634,6 @@
   }
 
   .location-map {
-<<<<<<< HEAD
     min-height: 220px;
-=======
-    min-height: 250px;
-  }
-}
-
-/* Small mobile: 320px – 374px */
-@media (max-width: 374px) {
-  .contact-hero h1 {
-    font-size: 2.2rem;
-    letter-spacing: -0.5px;
-  }
-
-  .contact-hero p:last-child {
-    font-size: 0.88rem;
-  }
-
-  .contact-form-wrapper {
-    padding: 18px 14px;
-  }
-
-  .contact-submit {
-    font-size: 0.9rem;
-    padding: 13px 14px;
-  }
-
-  .location-map {
-    min-height: 220px;
-  }
-}
-
-/* =========================
-   REDUCED MOTION
-========================= */
-
-@media (prefers-reduced-motion: reduce) {
-  .contact-submit {
-    transition: none;
-  }
-
-  .submit-arrow {
-    transition: none;
-  }
-
-  .location-map::before {
-    animation: none;
-  }
-
-  .contact-detail-number {
-    transition: none;
->>>>>>> master
   }
 }
