@@ -1,22 +1,24 @@
-@media (max-width: 900px) {
+/* Tablet & Medium Screens */
+@media (max-width: 1024px) {
   .main-nav {
-    gap: 20px;
+    gap: 22px;
   }
 
   .nav-link {
-    font-size: 0.85rem;
+    font-size: 0.88rem;
   }
 
   .footer-main {
-    gap: 50px;
+    gap: 36px;
   }
 
   .footer-navigation {
-    gap: 50px;
+    gap: 36px;
   }
 }
 
-@media (max-width: 768px) {
+/* Tablet & Mobile Breakpoint */
+@media (max-width: 900px) {
   /* --------------------------------
      HEADER — sticky so menu pushes content down
   -------------------------------- */
@@ -51,12 +53,13 @@
   }
 
   .header-brand-name {
-    font-size: 0.8rem;
+    font-size: 0.84rem;
+    letter-spacing: 0.05em;
   }
 
   .header-logo {
-    width: 40px;
-    height: 40px;
+    width: 36px;
+    height: 36px;
   }
 
   .menu-toggle {
@@ -102,10 +105,8 @@
 
   .footer-main {
     flex-direction: column;
-
-    gap: 45px;
-
-    padding-bottom: 45px;
+    gap: 36px;
+    padding-bottom: 36px;
   }
 
   .footer-brand {
@@ -114,29 +115,69 @@
 
   .footer-navigation {
     display: flex;
-
-    gap: 50px;
-
+    flex-wrap: wrap;
+    gap: 36px;
     width: 100%;
   }
 
   .footer-column {
-    min-width: 0;
+    min-width: 140px;
   }
 }
 
+/* Animations */
+@keyframes mobileNavFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Small Mobile Screens (e.g. <= 480px, iPhone 12/13/14/15/16, Galaxy S) */
 @media (max-width: 480px) {
   .header-brand-name {
-    display: none;
+    display: inline-block;
+    font-size: 0.76rem;
+    letter-spacing: 0.04em;
+    max-width: 170px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .header-logo {
+    width: 32px;
+    height: 32px;
   }
 
   .footer-navigation {
     flex-direction: column;
-
-    gap: 35px;
+    gap: 26px;
   }
 
   .footer-bottom {
     padding-inline: 15px;
+    text-align: center;
+  }
+}
+
+/* Extra Small Phones (<= 360px, iPhone SE) */
+@media (max-width: 360px) {
+  .header-brand-name {
+    font-size: 0.7rem;
+    max-width: 140px;
+  }
+
+  .header-logo {
+    width: 30px;
+    height: 30px;
+  }
+
+  .header-inner {
+    padding-inline: 4px;
   }
 }

@@ -24,9 +24,10 @@ const values = [
 function About() {
   return (
     <div className="about-page">
+      {/* Banner with clearly visible full white car */}
       <section className="about-banner">
-        <div className="container">
-          <p className="section-kicker">ABOUT US</p>
+        <div className="container about-banner-inner">
+          <div className="about-eyebrow">ABOUT US</div>
           <h1>BUILDING THE FUTURE OF MOBILITY.</h1>
           <p>
             A modern car manufacturing vision shaped by engineering,
@@ -35,34 +36,42 @@ function About() {
         </div>
       </section>
 
-      <section className="section-space about-story">
-        <div className="container about-story-grid">
-          <div>
+      {/* Merged Who We Are & Structured Red Car Image Section */}
+      <section className="section-space about-who">
+        <div className="container about-who-grid">
+          <div className="about-who-content">
             <p className="section-kicker">WHO WE ARE</p>
             <h2>More than manufacturing. We create possibilities.</h2>
+            <div className="about-story-copy">
+              <p>
+                Car Manufacturing is built around a simple idea: vehicles should
+                combine purposeful design, dependable engineering, modern
+                technology, and an enjoyable driving experience.
+              </p>
+              <p>
+                Our approach connects the complete automotive journey — from
+                ideas and engineering to manufacturing, quality, and customer
+                experience.
+              </p>
+            </div>
           </div>
 
-          <div className="about-story-copy">
-            <p>
-              Car Manufacturing is built around a simple idea: vehicles should
-              combine purposeful design, dependable engineering, modern
-              technology, and an enjoyable driving experience.
-            </p>
-            <p>
-              Our approach connects the complete automotive journey — from
-              ideas and engineering to manufacturing, quality, and customer
-              experience.
-            </p>
+          <div className="about-who-image-card">
+            <div
+              className="about-who-image"
+              role="img"
+              aria-label="Automotive manufacturing and engineering"
+            >
+              <div className="about-image-badge">
+                <span className="image-badge-dot" />
+                <span>PRECISION ENGINEERING</span>
+              </div>
+            </div>
           </div>
         </div>
       </section>
 
-      <section className="about-image-section">
-        <div className="container">
-          <div className="about-main-image" role="img" aria-label="Automotive manufacturing and engineering" />
-        </div>
-      </section>
-
+      {/* Values Section */}
       <section className="section-space about-values">
         <div className="container">
           <div className="section-heading">
@@ -82,7 +91,8 @@ function About() {
         </div>
       </section>
 
-      <section className="about-mission">
+      {/* Our Mission Section with reduced spacing */}
+      <section className="section-space about-mission">
         <div className="container about-mission-grid">
           <div>
             <p className="section-kicker">OUR MISSION</p>
@@ -101,6 +111,7 @@ function About() {
         </div>
       </section>
 
+      {/* CTA Section */}
       <section className="section-space about-cta">
         <div className="container">
           <p className="section-kicker">EXPLORE THE EXPERIENCE</p>
@@ -120,4 +131,3 @@ function About() {
 }
 
 export default About;
-

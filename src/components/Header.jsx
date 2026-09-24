@@ -30,7 +30,6 @@ function Header() {
             src={logo} alt="Company Logo"
             className="header-logo"
           />
-
           <span className="header-brand-name">
             CAR MANUFACTURING
           </span>

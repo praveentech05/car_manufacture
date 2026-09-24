@@ -99,7 +99,7 @@
 }
 
 .services-container {
-  width: min(1200px, 100%);
+  width: min(var(--container-width), 100%);
   margin: 0 auto;
 }
 
@@ -367,7 +367,7 @@
 }
 
 .strengths-container {
-  width: min(1200px, 100%);
+  width: min(var(--container-width), 100%);
   margin: 0 auto;
 }
 
@@ -541,31 +541,37 @@
 /* Large mobile / small tablet: 481px – 767px */
 @media (max-width: 767px) {
   .services-hero {
-    min-height: 45vh;
-    padding-top: 0;
+    min-height: 44vh;
+    padding-top: var(--header-height);
+  }
+
+  .services-hero h1 {
+    font-size: clamp(2rem, 8vw, 3rem);
   }
 
   .services-section,
   .strengths-section {
-    padding: 40px 16px;
+    padding: 36px 0;
   }
 
-  .services-grid {
-    grid-template-columns: 1fr;
-    gap: 16px;
-  }
-
+  .services-grid,
   .strengths-grid {
     grid-template-columns: 1fr;
-    gap: 16px;
+    gap: 14px;
   }
 
   .service-card {
     min-height: auto;
+    padding: 22px 18px;
   }
 
-  .service-card:hover {
-    transform: translateY(-4px);
+  .service-number {
+    margin-bottom: 20px;
+  }
+
+  .strength-card {
+    min-height: auto;
+    padding: 20px 18px;
   }
 }
 
@@ -576,49 +582,17 @@
   }
 
   .services-hero-content {
-    padding: 28px 16px;
+    padding: 24px 14px;
   }
 
-  .services-hero h1 {
-    letter-spacing: -1px;
-  }
-
-  .service-card {
-    padding: 22px 18px;
-  }
-
-  .service-number {
+  .services-heading,
+  .strengths-heading {
     margin-bottom: 24px;
   }
 
-  .strength-card {
-    min-height: auto;
-    padding: 22px 18px;
-  }
-}
-
-/* Small mobile: 320px – 374px */
-@media (max-width: 374px) {
-  .services-hero h1 {
-    font-size: 2.2rem;
-    letter-spacing: -0.5px;
-  }
-
-  .services-hero p:last-child {
-    font-size: 0.88rem;
-  }
-
-  .service-card {
-    padding: 18px 14px;
-  }
-
-  .service-number {
-    margin-bottom: 18px;
-    width: 44px;
-    height: 44px;
-  }
-
-  .strength-card {
-    padding: 18px 14px;
+  .services-heading h2,
+  .strengths-heading h2 {
+    font-size: clamp(1.6rem, 6.5vw, 2.2rem);
+    line-height: 1.15;
   }
 }

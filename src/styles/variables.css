@@ -16,7 +16,7 @@
   --font-heading: "Space Grotesk", sans-serif;
 
   /* Layout */
-  --container-width: 1200px;
+  --container-width: 1440px;
   --header-height: 80px;
 
   /* Effects */
@@ -26,4 +26,10 @@
 
   --transition-fast: 0.2s ease;
   --transition-normal: 0.3s ease;
+}
+
+@media (max-width: 768px) {
+  :root {
+    --header-height: 68px;
+  }
 }

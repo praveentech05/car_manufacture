@@ -4,51 +4,93 @@
     background: var(--color-bg);
 }
 
+.section-space {
+    padding: 38px 0;
+}
+
+/* Banner with clearly visible full white car */
 .about-banner {
-    min-height: 520px;
+    min-height: 100vh;
+    min-height: 100svh;
+    width: 100%;
     display: flex;
-    align-items: flex-end;
-    padding: 150px 0 85px;
+    align-items: center;
+    padding-top: calc(var(--header-height) + 24px);
+    padding-bottom: 60px;
+    position: relative;
     background:
-        linear-gradient(90deg, rgba(8, 8, 8, 0.92), rgba(8, 8, 8, 0.4)),
-        url("https://images.unsplash.com/photo-1560958089-b8a1929cea89?auto=format&fit=crop&w=2000&q=85") center/cover no-repeat;
+        linear-gradient(90deg, rgba(8, 8, 8, 0.96) 0%, rgba(8, 8, 8, 0.72) 42%, rgba(8, 8, 8, 0.1) 80%, transparent 100%),
+        linear-gradient(180deg, rgba(8, 8, 8, 0.35) 0%, transparent 40%, rgba(8, 8, 8, 0.85) 100%),
+        url("https://images.unsplash.com/photo-1560958089-b8a1929cea89?auto=format&fit=crop&w=2000&q=85") right bottom / cover no-repeat;
+}
+
+.about-banner-inner {
+    width: 100%;
+}
+
+.about-eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--color-primary);
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    padding: 6px 14px;
+    background: rgba(200, 255, 0, 0.08);
+    border: 1px solid rgba(200, 255, 0, 0.28);
+    border-radius: 999px;
+    backdrop-filter: blur(8px);
+    margin-bottom: 18px;
+}
+
+.about-eyebrow::before {
+    content: "";
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--color-primary);
+    box-shadow: 0 0 8px var(--color-primary);
 }
 
 .about-banner h1 {
-    max-width: 950px;
+    max-width: 580px;
     font-family: var(--font-heading);
-    font-size: clamp(3rem, 7vw, 6.5rem);
-    line-height: 0.92;
-    letter-spacing: -0.06em;
+    font-size: clamp(2.8rem, 6.5vw, 5.5rem);
+    line-height: 0.94;
+    letter-spacing: -0.05em;
 }
 
-.about-banner>.container>p:last-child {
-    max-width: 650px;
-    margin-top: 25px;
+.about-banner p {
+    max-width: 520px;
+    margin-top: 18px;
     color: var(--color-text-secondary);
     font-size: 1.05rem;
 }
 
-.about-story {
+/* Merged Who We Are & Structured Red Car Image Section */
+.about-who {
+    padding: 48px 0;
     border-bottom: 1px solid var(--color-border);
 }
 
-.about-story-grid,
-.about-mission-grid {
+.about-who-grid {
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 80px;
-    align-items: start;
+    grid-template-columns: 1.05fr 0.95fr;
+    gap: 44px;
+    align-items: center;
 }
 
-.about-story h2,
+.about-who-content h2,
 .about-mission h2,
 .about-cta h2 {
     max-width: 650px;
     font-family: var(--font-heading);
-    font-size: clamp(2.2rem, 5vw, 4.5rem);
-    line-height: 1;
-    letter-spacing: -0.05em;
+    font-size: clamp(2rem, 4.2vw, 3.6rem);
+    line-height: 1.05;
+    letter-spacing: -0.04em;
+    margin-bottom: 16px;
 }
 
 .about-story-copy {
@@ -56,47 +98,89 @@
     font-size: 1.05rem;
 }
 
-.about-story-copy p+p {
-    margin-top: 22px;
+.about-story-copy p + p {
+    margin-top: 14px;
 }
 
-.about-image-section {
-    padding: 110px 0;
+/* Structured card container shifted slightly down */
+.about-who-image-card {
+    margin-top: 16px;
+    position: relative;
 }
 
-.about-main-image {
-    min-height: 600px;
+.about-who-image {
+    height: 380px;
     border-radius: var(--radius-lg);
     border: 1px solid var(--color-border);
+    position: relative;
+    overflow: hidden;
     background:
-        linear-gradient(180deg, transparent 45%, rgba(8, 8, 8, 0.75)),
-        url("https://images.unsplash.com/photo-1583121274602-3e2820c69888?auto=format&fit=crop&w=1800&q=85") center/cover no-repeat;
+        linear-gradient(180deg, transparent 40%, rgba(8, 8, 8, 0.75)),
+        url("https://images.unsplash.com/photo-1583121274602-3e2820c69888?auto=format&fit=crop&w=1800&q=85") center 78% / cover no-repeat;
+    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.45);
+    transition: transform var(--transition-normal), border-color var(--transition-normal);
 }
 
+.about-who-image:hover {
+    transform: translateY(-2px);
+    border-color: rgba(200, 255, 0, 0.35);
+}
+
+.about-image-badge {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 6px 14px;
+    background: rgba(8, 8, 8, 0.8);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 999px;
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    color: var(--color-text);
+}
+
+.image-badge-dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--color-primary);
+    box-shadow: 0 0 6px var(--color-primary);
+}
+
+/* Values Section ("WHAT WE STAND FOR") */
 .about-values {
     background: var(--color-bg-secondary);
+}
+
+.about-values .section-heading {
+    max-width: 650px;
+    margin-bottom: 22px;
 }
 
 .about-values-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 20px;
+    gap: 16px;
 }
 
 .about-value-card {
-    padding: 32px;
-    min-height: 280px;
+    padding: 22px 20px;
     border: 1px solid var(--color-border);
     border-radius: var(--radius-lg);
     background: var(--color-surface);
 }
 
 .about-value-icon {
-    width: 50px;
-    height: 50px;
+    width: 44px;
+    height: 44px;
     display: grid;
     place-items: center;
-    margin-bottom: 55px;
+    margin-bottom: 16px;
     border-radius: 50%;
     color: #080808;
     background: var(--color-primary);
@@ -104,34 +188,41 @@
 
 .about-value-card h3 {
     font-family: var(--font-heading);
-    font-size: 1.45rem;
-    margin-bottom: 10px;
+    font-size: 1.3rem;
+    margin-bottom: 6px;
 }
 
 .about-value-card p,
-.about-mission-grid>div:last-child>p {
+.about-mission-grid > div:last-child > p {
     color: var(--color-text-secondary);
 }
 
+/* Our Mission Section - Reduced Spacing */
 .about-mission {
-    padding: 110px 0;
     border-bottom: 1px solid var(--color-border);
 }
 
-.about-mission-grid>div:last-child {
-    padding-top: 10px;
+.about-mission-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 38px;
+    align-items: center;
+}
+
+.about-mission-grid > div:last-child {
     font-size: 1.05rem;
 }
 
+/* CTA */
 .about-cta {
     text-align: center;
     background:
-        linear-gradient(90deg, rgba(8, 8, 8, 0.82), rgba(8, 8, 8, 0.55)),
+        linear-gradient(90deg, rgba(8, 8, 8, 0.85), rgba(8, 8, 8, 0.6)),
         url("https://images.unsplash.com/photo-1493238792000-8113da705763?auto=format&fit=crop&w=1800&q=85") center/cover no-repeat;
 }
 
 .about-cta h2 {
-    margin: 0 auto 30px;
+    margin: 0 auto 20px;
 }
 
 .about-cta-actions {
@@ -141,37 +232,92 @@
     flex-wrap: wrap;
 }
 
+/* Phone View & Minimized Screen Sizes (<= 900px, down to 320px) */
 @media (max-width: 768px) {
     .about-banner {
-        min-height: 470px;
-        padding: 130px 0 65px;
-        background-position: 65% center;
+        min-height: 100vh;
+        min-height: 100dvh;
+        display: flex;
+        align-items: center;
+        padding-top: calc(var(--header-height) + 16px);
+        padding-bottom: 30px;
+        background:
+            linear-gradient(180deg, rgba(8, 8, 8, 0.88) 0%, rgba(8, 8, 8, 0.55) 45%, rgba(8, 8, 8, 0.95) 100%),
+            url("https://images.unsplash.com/photo-1560958089-b8a1929cea89?auto=format&fit=crop&w=1200&q=80") 72% bottom / cover no-repeat;
     }
 
-    .about-story-grid,
+    .about-banner h1 {
+        font-size: clamp(2.1rem, 9vw, 3.2rem);
+        line-height: 1.02;
+    }
+
+    .about-banner p {
+        font-size: 0.95rem;
+        margin-top: 12px;
+    }
+
+    .about-eyebrow {
+        font-size: 0.7rem;
+        padding: 5px 12px;
+        margin-bottom: 12px;
+    }
+
+    .section-space {
+        padding: 34px 0;
+    }
+
+    .about-who-grid,
     .about-mission-grid {
         grid-template-columns: 1fr;
-        gap: 40px;
+        gap: 20px;
     }
 
-    .about-image-section,
-    .about-mission {
-        padding: 75px 0;
+    .about-who-content h2,
+    .about-mission h2,
+    .about-cta h2 {
+        font-size: clamp(1.7rem, 6.5vw, 2.3rem);
+        line-height: 1.1;
     }
 
-    .about-main-image {
-        min-height: 380px;
+    .about-who-image-card {
+        margin-top: 10px;
+    }
+
+    .about-who-image {
+        height: 230px;
+        background-position: center 75%;
     }
 
     .about-values-grid {
         grid-template-columns: 1fr;
+        gap: 14px;
     }
 
     .about-value-card {
         min-height: auto;
+        padding: 20px 18px;
     }
 
     .about-value-icon {
-        margin-bottom: 35px;
+        margin-bottom: 14px;
+    }
+
+    .about-cta-actions {
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+        width: 100%;
+    }
+
+    .about-cta-actions .home-button {
+        width: 100%;
+        max-width: 280px;
+        min-height: 48px;
+    }
+}
+
+@media (max-width: 360px) {
+    .about-banner h1 {
+        font-size: clamp(1.85rem, 8.5vw, 2.2rem);
     }
 }
