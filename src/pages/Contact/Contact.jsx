@@ -1,3 +1,5 @@
+import { useForm, ValidationError } from "@formspree/react";
+import { ArrowUpRight, CheckCircle2, MapPin } from "lucide-react";
 import "./Contact.css";
 
 const contactDetails = [
@@ -28,6 +30,8 @@ const contactDetails = [
 ];
 
 function Contact() {
+  const [state, handleSubmit, reset] = useForm("xwlpbvnk");
+
   return (
     <main className="contact-page">
       {/* Hero */}
@@ -86,71 +90,140 @@ function Contact() {
               <h3>Send Us a Message</h3>
             </div>
 
-            <form className="contact-form">
-              <div className="form-row">
-                <div className="form-group">
-                  <label htmlFor="name">Full Name</label>
-
-                  <input
-                    type="text"
-                    id="name"
-                    name="name"
-                    placeholder="Enter your name"
-                  />
+            {state.succeeded ? (
+              <div className="form-success-box" role="status" aria-live="polite">
+                <div className="form-success-icon">
+                  <CheckCircle2 size={30} />
                 </div>
-
-                <div className="form-group">
-                  <label htmlFor="email">Email Address</label>
-
-                  <input
-                    type="email"
-                    id="email"
-                    name="email"
-                    placeholder="Enter your email"
-                  />
-                </div>
+                <h3>Message Sent</h3>
+                <p>
+                  Thank you for reaching out. We have received your message and
+                  our team will get back to you shortly.
+                </p>
+                <button
+                  type="button"
+                  className="form-reset-btn"
+                  onClick={reset}
+                >
+                  Send Another Message
+                </button>
               </div>
+            ) : (
+              <form
+                className="contact-form"
+                onSubmit={handleSubmit}
+                aria-busy={state.submitting}
+              >
+                <div className="form-row">
+                  <div className="form-group">
+                    <label htmlFor="name">Full Name</label>
 
-              <div className="form-row">
-                <div className="form-group">
-                  <label htmlFor="phone">Phone Number</label>
+                    <input
+                      type="text"
+                      id="name"
+                      name="name"
+                      placeholder="Enter your name"
+                      required
+                    />
+                    <ValidationError
+                      prefix="Name"
+                      field="name"
+                      errors={state.errors}
+                      className="form-error"
+                    />
+                  </div>
 
-                  <input
-                    type="tel"
-                    id="phone"
-                    name="phone"
-                    placeholder="Enter your phone number"
-                  />
+                  <div className="form-group">
+                    <label htmlFor="email">Email Address</label>
+
+                    <input
+                      type="email"
+                      id="email"
+                      name="email"
+                      placeholder="Enter your email"
+                      required
+                    />
+                    <ValidationError
+                      prefix="Email"
+                      field="email"
+                      errors={state.errors}
+                      className="form-error"
+                    />
+                  </div>
+                </div>
+
+                <div className="form-row">
+                  <div className="form-group">
+                    <label htmlFor="phone">Phone Number</label>
+
+                    <input
+                      type="tel"
+                      id="phone"
+                      name="phone"
+                      placeholder="Enter your phone number"
+                    />
+                    <ValidationError
+                      prefix="Phone"
+                      field="phone"
+                      errors={state.errors}
+                      className="form-error"
+                    />
+                  </div>
+
+                  <div className="form-group">
+                    <label htmlFor="subject">Subject</label>
+
+                    <input
+                      type="text"
+                      id="subject"
+                      name="subject"
+                      placeholder="Enter subject"
+                    />
+                    <ValidationError
+                      prefix="Subject"
+                      field="subject"
+                      errors={state.errors}
+                      className="form-error"
+                    />
+                  </div>
                 </div>
 
                 <div className="form-group">
-                  <label htmlFor="subject">Subject</label>
+                  <label htmlFor="message">Message</label>
 
-                  <input
-                    type="text"
-                    id="subject"
-                    name="subject"
-                    placeholder="Enter subject"
+                  <textarea
+                    id="message"
+                    name="message"
+                    rows="6"
+                    placeholder="Tell us how we can help..."
+                    required
+                  ></textarea>
+                  <ValidationError
+                    prefix="Message"
+                    field="message"
+                    errors={state.errors}
+                    className="form-error"
                   />
                 </div>
-              </div>
 
-              <div className="form-group">
-                <label htmlFor="message">Message</label>
+                <ValidationError
+                  errors={state.errors}
+                  className="form-error form-error-general"
+                  role="alert"
+                />
 
-                <textarea
-                  id="message"
-                  name="message"
-                  rows="6"
-                  placeholder="Tell us how we can help..."
-                ></textarea>
-              </div>
-
-              <button type="submit" className="contact-submit">
-                <span>Send Message</span>
-                <span className="submit-arrow">↗</span>
-              </button>
-            </form>
+                <button
+                  type="submit"
+                  className="contact-submit"
+                  disabled={state.submitting}
+                >
+                  <span>
+                    {state.submitting ? "Sending..." : "Send Message"}
+                  </span>
+                  <span className="submit-arrow">↗</span>
+                </button>
+              </form>
+            )}
           </div>
         </div>
       </section>
@@ -170,15 +243,33 @@ function Contact() {
           </div>
 
           <div className="location-map">
-            <div className="map-overlay">
-              <span className="map-pin">●</span>
+            <iframe
+              title="REVA University Location"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3885.704004195485!2d77.62794088885501!3d13.117928400000002!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae191736187a37%3A0x3092096ba7fb4c9b!2sREVA%20University!5e0!3m2!1sen!2sin!4v1790213252540!5m2!1sen!2sin"
+              referrerPolicy="no-referrer-when-downgrade"
+            />
 
-              <h3>AutoVista Manufacturing</h3>
+           
 
-              <p>Industrial Park, India</p>
+            <div className="map-location-marker" aria-hidden="true">
+              <span>
+                <MapPin size={18} strokeWidth={2.5} />
+              </span>
             </div>
+
+            <a
+              className="map-open-link"
+              href="https://www.google.com/maps/search/?api=1&query=REVA%20University"
+              target="_blank"
+              rel="noreferrer"
+            >
+              <MapPin size={16} />
+              <span>Open in Maps</span>
+              <ArrowUpRight size={15} />
+            </a>
           </div>
-        </div>
+</div>
+        
       </section>
     </main>
   );
