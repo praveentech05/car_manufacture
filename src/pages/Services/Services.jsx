@@ -71,12 +71,14 @@ function Services() {
     <main className="services-page">
       {/* Hero */}
       <section className="services-hero">
-        <div className="services-hero-content">
-          <p className="services-label">WHAT WE DO</p>
+        <div className="services-hero-overlay" />
 
-          <h1>Services</h1>
+        <div className="container services-hero-content">
+          <div className="services-eyebrow">WHAT WE DO</div>
 
-          <p>
+          <h1>SERVICES</h1>
+
+          <p className="services-hero-desc">
             Delivering innovative automotive solutions through engineering,
             manufacturing, technology, and dedicated customer support.
           </p>

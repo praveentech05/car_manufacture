@@ -121,7 +121,8 @@
   }
 
   .footer-column {
-    min-width: 140px;
+    flex: 1 1 0;
+    min-width: 0;
   }
 }
 
@@ -155,8 +156,13 @@
   }
 
   .footer-navigation {
-    flex-direction: column;
-    gap: 26px;
+    flex-direction: row;
+    gap: 24px;
+  }
+
+  .footer-column {
+    flex: 1 1 0;
+    min-width: 0;
   }
 
   .footer-bottom {

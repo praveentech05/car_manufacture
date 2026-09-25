@@ -49,10 +49,12 @@ function Gallery() {
   return (
     <main className="gallery-page">
       <section className="gallery-hero">
-        <div className="gallery-hero-overlay">
-          <p className="gallery-subtitle">OUR COLLECTION</p>
+        <div className="gallery-hero-overlay" />
 
-          <h1>Gallery</h1>
+        <div className="container gallery-hero-content">
+          <div className="gallery-eyebrow">OUR COLLECTION</div>
+
+          <h1>GALLERY</h1>
 
           <p className="gallery-description">
             Explore our vehicles, manufacturing facilities, and automotive
