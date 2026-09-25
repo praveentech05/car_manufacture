@@ -8,8 +8,8 @@
 ========================= */
 
 .gallery-hero {
-  min-height: 100vh;
-  min-height: 100svh;
+  min-height: 70vh;
+  min-height: 70svh;
   width: 100%;
   position: relative;
   display: flex;
@@ -35,7 +35,7 @@
   position: relative;
   z-index: 1;
   width: 100%;
-  padding-top: 40px;
+  padding-top: 20px;
   padding-bottom: 60px;
   color: #fff;
   text-align: left;
@@ -273,8 +273,8 @@
   }
 
   .gallery-hero {
-    min-height: 100vh;
-    min-height: 100svh;
+    min-height: 70vh;
+    min-height: 70svh;
     padding-top: var(--header-height);
   }
 
@@ -290,8 +290,8 @@
 /* Large mobile / small tablet: 481px – 767px */
 @media (max-width: 767px) {
   .gallery-hero {
-    min-height: 100vh;
-    min-height: 100dvh;
+    min-height: 55vh;
+    min-height: 55dvh;
     display: flex;
     align-items: center;
     padding-top: calc(var(--header-height) + 16px);
@@ -342,8 +342,8 @@
 /* Standard mobile: 375px – 480px */
 @media (max-width: 480px) {
   .gallery-hero {
-    min-height: 100vh;
-    min-height: 100dvh;
+    min-height: 55vh;
+    min-height: 55dvh;
   }
 
   .gallery-hero-content {
